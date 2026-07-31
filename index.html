@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#09070b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Berzah Assistant" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Berzah Assistant</title>
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">KİŞİSEL OYUN ASİSTANI</div>
+        <h1>BERZAH <span>ASSISTANT</span></h1>
+      </div>
+      <button id="soundToggle" class="icon-btn" aria-label="Sesli yanıtı aç/kapat">🔊</button>
+    </header>
+
+    <section class="hero-card">
+      <div class="orb-wrap">
+        <div class="orb" id="orb">
+          <div class="orb-core"></div>
+          <div class="ring ring-a"></div>
+          <div class="ring ring-b"></div>
+        </div>
+      </div>
+      <p id="status" class="status">Hazırım. Mikrofona dokun ve konuş.</p>
+      <button id="micButton" class="mic-button">
+        <span class="mic-icon">🎙️</span>
+        <span>BERZAH'I DİNLET</span>
+      </button>
+      <p class="hint">Uygulama açıkken “Berzah” diyerek cümlene başlayabilirsin.</p>
+    </section>
+
+    <section class="response-card">
+      <div class="section-title">BERZAH'IN CEVABI</div>
+      <div id="response" class="response">
+        Örnek: “Berzah, 210 won param var. Nemere bileti 175 won. Almak mantıklı mı?”
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="section-title">HIZLI ANALİZ</div>
+        <label>Mevcut paran (won)</label>
+        <input id="budget" inputmode="decimal" placeholder="210" />
+        <label>Ürün fiyatı (won)</label>
+        <input id="price" inputmode="decimal" placeholder="175" />
+        <label>Ürün adı</label>
+        <input id="itemName" placeholder="Nemere bileti" />
+        <button id="analyzeButton" class="secondary-btn">Analiz Et</button>
+      </article>
+
+      <article class="panel">
+        <div class="section-title">PİYASA HAFIZASI</div>
+        <label>Eşya adı</label>
+        <input id="marketItem" placeholder="Nemere bileti" />
+        <div class="triple">
+          <input id="marketMin" inputmode="decimal" placeholder="Min" />
+          <input id="marketNormal" inputmode="decimal" placeholder="Normal" />
+          <input id="marketMax" inputmode="decimal" placeholder="Max" />
+        </div>
+        <button id="saveMarketButton" class="secondary-btn">Piyasayı Kaydet</button>
+        <div id="marketList" class="market-list"></div>
+      </article>
+    </section>
+
+    <footer>
+      Veriler yalnızca bu cihazın tarayıcısında saklanır.
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

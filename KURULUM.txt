@@ -1,0 +1,30 @@
+BERZAH ASSISTANT — WINDOWS + iPHONE KURULUMU
+
+ÖNEMLİ:
+Bu sürüm bir PWA'dır. Windows'ta hazırlanır ve iPhone'da Safari üzerinden ana ekrana eklenir.
+iPhone kilitliyken veya uygulama kapalıyken sürekli "Berzah" kelimesini dinleyemez.
+Sesli kullanım uygulama açıkken ve mikrofon izni verildiğinde çalışır.
+
+EN KOLAY YAYINLAMA (GitHub Pages):
+1. GitHub hesabı aç.
+2. Yeni bir public repository oluştur: berzah-assistant
+3. Bu klasördeki tüm dosyaları repository içine yükle.
+4. Repository > Settings > Pages bölümüne gir.
+5. Source olarak "Deploy from a branch", branch olarak main / root seç.
+6. Oluşan HTTPS adresini iPhone'da Safari ile aç.
+7. Safari'de Paylaş > Ana Ekrana Ekle > Ekle.
+8. Berzah simgesi normal uygulama gibi ana ekrana gelir.
+9. İlk ses kullanımında mikrofon iznine "İzin Ver" de.
+
+WINDOWS'TA YEREL TEST:
+1. Bu klasörde boş alana Shift + sağ tık yap.
+2. "Terminali burada aç" seç.
+3. Python kuruluysa şu komutu çalıştır:
+   python -m http.server 8080
+4. Bilgisayarda http://localhost:8080 adresini aç.
+Not: iPhone'da mikrofon için HTTPS gerekir; bu nedenle gerçek telefon kurulumu için GitHub Pages önerilir.
+
+KULLANIM ÖRNEKLERİ:
+- "Berzah, 210 won param var. Nemere bileti 175 won. Alayım mı?"
+- "69 adet 28 won, tanesi kaç won?"
+- Piyasa Hafızası bölümünden eşyanın min / normal / max fiyatlarını kaydet.

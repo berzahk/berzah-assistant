@@ -1,0 +1,42 @@
+
+:root{
+  --bg:#070609;--panel:rgba(22,17,25,.78);--line:rgba(213,171,79,.22);
+  --gold:#d5ab4f;--gold2:#f0d28a;--wine:#6c1029;--wine2:#b62b52;
+  --text:#f4efe6;--muted:#a9a0ac;--danger:#ff657d;--ok:#69e0a3;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 20% 0%,#35101b 0,transparent 35%),
+radial-gradient(circle at 100% 10%,#241728 0,transparent 28%),var(--bg);color:var(--text)}
+body{min-height:100vh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+.app-shell{width:min(940px,100%);margin:auto;padding:22px 16px 36px;position:relative}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.eyebrow,.section-title{font-size:11px;letter-spacing:.22em;color:var(--gold2);font-weight:800}
+h1{font-size:25px;margin:4px 0 0;letter-spacing:.06em}h1 span{color:var(--gold)}
+.icon-btn{border:1px solid var(--line);background:#130f16;color:white;border-radius:14px;width:46px;height:46px;font-size:20px}
+.hero-card,.response-card,.panel{border:1px solid var(--line);background:linear-gradient(145deg,rgba(27,20,30,.92),rgba(10,8,12,.88));box-shadow:0 28px 70px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.04);backdrop-filter:blur(20px)}
+.hero-card{border-radius:26px;padding:28px 18px;text-align:center;overflow:hidden;position:relative}
+.orb-wrap{height:210px;display:grid;place-items:center}
+.orb{width:128px;height:128px;position:relative;display:grid;place-items:center;transition:.3s}
+.orb.listening{transform:scale(1.08);filter:drop-shadow(0 0 24px rgba(182,43,82,.75))}
+.orb-core{width:76px;height:76px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#ffd98a,#8c1838 42%,#170b12 72%);box-shadow:0 0 28px #9d2448,0 0 80px rgba(213,171,79,.2);animation:pulse 2.4s infinite}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(240,210,138,.5)}
+.ring-a{inset:8px;animation:spin 8s linear infinite;border-left-color:transparent}
+.ring-b{inset:-18px;border-color:rgba(182,43,82,.5);border-top-color:transparent;animation:spin 12s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 40px #b62b52,0 0 100px rgba(213,171,79,.28)}}
+.status{color:var(--muted);min-height:24px}
+.mic-button,.secondary-btn{border:0;border-radius:14px;font-weight:800;letter-spacing:.06em}
+.mic-button{padding:16px 20px;color:#150b0f;background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 12px 28px rgba(213,171,79,.18)}
+.mic-button:active,.secondary-btn:active{transform:scale(.98)}
+.mic-icon{margin-right:8px}.hint{font-size:12px;color:#817985;margin-bottom:0}
+.response-card{margin-top:16px;border-radius:20px;padding:18px}.response{margin-top:12px;font-size:17px;line-height:1.55}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}.panel{border-radius:20px;padding:18px}
+label{display:block;font-size:12px;color:var(--muted);margin:14px 0 7px}
+input{width:100%;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:#0d0a0f;color:white;padding:13px;font-size:16px;outline:none}
+input:focus{border-color:var(--gold)}
+.triple{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.secondary-btn{width:100%;padding:14px;margin-top:14px;background:linear-gradient(135deg,#62172d,#9a2446);color:white}
+.market-list{display:grid;gap:8px;margin-top:12px}.market-row{display:flex;justify-content:space-between;gap:10px;padding:10px;border-radius:10px;background:rgba(255,255,255,.035);font-size:13px}.market-row button{background:none;border:0;color:var(--danger)}
+footer{text-align:center;color:#6f6872;font-size:11px;margin-top:22px}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.hero-card{padding:36px}.app-shell{padding-top:36px}}
